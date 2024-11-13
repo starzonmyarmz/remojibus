@@ -1,0 +1,94 @@
+:root {
+  --barn-red: 35.96% 0.1475 29.23;
+  --fire-brick: 51.61% 0.2019 25.94;
+  --papaya-whip: 95.84% 0.0381 85.35;
+  --prussian-blue: 29.38% 0.0656 238.47;
+  --air-superiority-blue: 66.5% 0.0747 236.79;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100dvh;
+}
+
+body {
+  background: oklch(var(--papaya-whip));
+  display: grid;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  grid-template-rows: min-content 1fr min-content;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+header {
+  background: oklch(var(--prussian-blue));
+  color: #fff;
+  padding-block: 1rem;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+
+  div {
+    display: flex;
+    gap: 1ch;
+    justify-content: space-around;
+  }
+
+  kbd {
+    background: #fff;
+    display: grid;
+    height: 3ch;
+    place-items: center;
+    width: 3ch;
+  }
+}
