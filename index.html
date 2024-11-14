@@ -1,55 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
+
+    <title>Remojibus</title>
+
+    <meta property="og:title" content="Remojibus">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="site.webmanifest">
   </head>
   <body>
-    <header>
-      REMOJIBUS
-    </header>
+    <main>
+      <header>
+        <button popovertarget="help-popover" aria-label="Learn how to play">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </button>
 
-    <section>
-      <span>💃</span>
-      <span>👸</span>
-    </section>
+        <h1>REMOJIBUS</h1>
 
-    <footer>
-      <input type="text">
-      <div>
-        <kbd>q</kbd>
-        <kbd>w</kbd>
-        <kbd>e</kbd>
-        <kbd>r</kbd>
-        <kbd>t</kbd>
-        <kbd>y</kbd>
-        <kbd>u</kbd>
-        <kbd>i</kbd>
-        <kbd>o</kbd>
-        <kbd>p</kbd>
-      </div>
-      <div>
-        <kbd>a</kbd>
-        <kbd>s</kbd>
-        <kbd>d</kbd>
-        <kbd>f</kbd>
-        <kbd>g</kbd>
-        <kbd>h</kbd>
-        <kbd>j</kbd>
-        <kbd>k</kbd>
-        <kbd>l</kbd>
-      </div>
-      <div>
-        <kbd>z</kbd>
-        <kbd>x</kbd>
-        <kbd>c</kbd>
-        <kbd>v</kbd>
-        <kbd>b</kbd>
-        <kbd>n</kbd>
-        <kbd>m</kbd>
-      </div>
-    </footer>
+        <button popovertarget="settings-popover" aria-label="Show game settings">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+      </header>
+
+      <section id="puzzle"></section>
+
+      <footer>
+        <input type="text" id="guess" pattern="dancing queen" readonly>
+
+        <div id="keyboard">
+          <div class="row">
+            <button class="kbd" data-letter>q</button>
+            <button class="kbd" data-letter>w</button>
+            <button class="kbd" data-letter>e</button>
+            <button class="kbd" data-letter>r</button>
+            <button class="kbd" data-letter>t</button>
+            <button class="kbd" data-letter>y</button>
+            <button class="kbd" data-letter>u</button>
+            <button class="kbd" data-letter>i</button>
+            <button class="kbd" data-letter>o</button>
+            <button class="kbd" data-letter>p</button>
+          </div>
+
+          <div class="row">
+            <button class="kbd" data-letter>a</button>
+            <button class="kbd" data-letter>s</button>
+            <button class="kbd" data-letter>d</button>
+            <button class="kbd" data-letter>f</button>
+            <button class="kbd" data-letter>g</button>
+            <button class="kbd" data-letter>h</button>
+            <button class="kbd" data-letter>j</button>
+            <button class="kbd" data-letter>k</button>
+            <button class="kbd" data-letter>l</button>
+          </div>
+
+          <div class="row">
+            <button class="kbd" data-letter>z</button>
+            <button class="kbd" data-letter>x</button>
+            <button class="kbd" data-letter>c</button>
+            <button class="kbd" data-letter>v</button>
+            <button class="kbd" data-letter>b</button>
+            <button class="kbd" data-letter>n</button>
+            <button class="kbd" data-letter>m</button>
+          </div>
+
+          <div class="row">
+            <button class="kbd kbd-back" data-delete aria-label="Delete letter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
+                <line x1="18" y1="9" x2="12" y2="15"/>
+                <line x1="12" y1="9" x2="18" y2="15"/>
+              </svg>
+            </button>
+            <button class="kbd kbd-space" data-space>space</button>
+            <button class="kbd kbd-submit" data-submit>submit</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <div id="help-popover" popover>
+      <h2>How to play</h2>
+    </div>
+
+    <div id="settings-popover" popover>
+      <h2>Settings</h2>
+
+      <label for="group">Highlight words</label>
+      <input type="checkbox" id="group">
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
