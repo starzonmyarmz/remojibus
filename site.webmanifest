@@ -1,6 +1,6 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Remojibus",
+  "name": "Remojibus",
   "icons": [
     {
       "src": "icon.png",
@@ -8,7 +8,7 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "start_url": "/",
+  "background_color": "#ffff",
+  "theme_color": "#313233"
 }

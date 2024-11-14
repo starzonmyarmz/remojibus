@@ -1,24 +1,24 @@
 document.addEventListener('click', ({ target }) => {
-  if (!target.matches('[data-letter]')) return
-  const currentValue = document.querySelector('input[type="text"]').value
-  document.querySelector('input[type="text"]').value = `${currentValue}${target.innerText}`
+  if (!target.closest('[data-letter]')) return
+  const currentValue = document.querySelector('#guess').textContent
+  document.querySelector('#guess').textContent = `${currentValue}${target.textContent}`
 })
 
 document.addEventListener('click', ({ target }) => {
-  if (!target.matches('[data-delete]')) return
-  const currentValue = document.querySelector('input[type="text"]').value
-  document.querySelector('input[type="text"]').value = `${currentValue.substring(0, currentValue.length - 1)}`
+  if (!target.closest('[data-space]')) return
+  const currentValue = document.querySelector('#guess').textContent
+  document.querySelector('#guess').textContent = `${currentValue} `
 })
 
 document.addEventListener('click', ({ target }) => {
-  if (!target.matches('[data-space]')) return
-  const currentValue = document.querySelector('input[type="text"]').value
-  document.querySelector('input[type="text"]').value = `${currentValue} `
+  if (!target.closest('[data-delete]')) return
+  const currentValue = document.querySelector('#guess').textContent
+  document.querySelector('#guess').textContent = currentValue.substring(0, currentValue.length - 1)
+
 })
 
 document.addEventListener('click', ({ target }) => {
-  if (!target.matches('[data-submit]')) return
-
+  if (!target.closest('[data-submit]')) return
 })
 
 async function getPuzzle(id) {
@@ -33,6 +33,6 @@ async function getPuzzle(id) {
   document.querySelector('#puzzle').innerHTML = words.join('')
 }
 
-getPuzzle(2)
+getPuzzle(3)
 
 // https://www.rd.com/list/emoji-riddles/
