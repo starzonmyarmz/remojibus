@@ -29,7 +29,7 @@
           </svg>
         </button>
 
-        <h1>REMOJIBUS</h1>
+        <h1>00:00:00</h1>
 
         <button popovertarget="settings-popover" aria-label="Show game settings">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -102,12 +102,29 @@
     <div id="settings-popover" popover>
       <h2>Settings</h2>
 
-      <label for="group">Highlight words</label>
-      <input type="checkbox" id="group" switch>
+      <fieldset>
+        <label for="group-words">Group emojis by words</label>
+        <input type="checkbox" id="group-words" switch>
+      </fieldset>
 
-      Clear saved data
+      <fieldset>
+        <label for="game-audio">Enable game sound effects</label>
+        <input type="checkbox" id="game-audio" switch>
+      </fieldset>
 
-      <p>© 2024 <a href="https://iamdanielmarino.com">Daniel Marino</a>.</p>
+      <fieldset>
+        <label for="game-timer">Enable game timer</label>
+        <input type="checkbox" id="game-timer" switch>
+      </fieldset>
+
+      <fieldset>
+        <button class="btn" data-share>Share game</button>
+        <button class="btn" data-reset>Erase data</button>
+      </fieldset>
+
+      <p>
+        © 2024 <a href="https://iamdanielmarino.com">Daniel Marino</a>
+      </p>
     </div>
 
     <script src="script.js"></script>

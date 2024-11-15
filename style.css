@@ -33,19 +33,13 @@ main {
   height: 100dvh;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+img svg {
   display: block;
   max-width: 100%;
 }
 
 input,
-button,
-textarea,
-select {
+button {
   font: inherit;
 }
 
@@ -61,7 +55,12 @@ h2 {
 }
 
 h1 {
+  display: none;
   font-size: inherit;
+}
+
+h2 {
+  margin-bottom: 1rem;
 }
 
 a,
@@ -76,6 +75,25 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+}
+
+p {
+  margin-block: 1em;
+  text-align: center;
+}
+
+fieldset {
+  border: 0;
+  border-bottom: 1px solid oklch(var(--papaya-whip));
+  padding: 1rem 0 0.5rem;
+  gap: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  &:has(button) > * {
+    flex-grow: 1;
+  }
 }
 
 button {
@@ -109,7 +127,7 @@ button {
   text-indent: 0.25ch;
 }
 
-:has(#group:checked) {
+:has(#group-words:checked) {
   #puzzle {
     gap: 0.25ch;
     line-height: 1.1;
@@ -123,6 +141,10 @@ button {
   }
 }
 
+:has(#game-timer:checked) h1 {
+  display: block;
+}
+
 #guess {
   font-size: 3ch;
   font-weight: bold;
@@ -132,6 +154,7 @@ button {
   text-align: center;
   text-transform: uppercase;
   width: 100vw;
+  text-size-adjust: auto;
 }
 
 #keyboard {
@@ -158,6 +181,10 @@ button {
   place-items: center;
   text-transform: uppercase;
   width: calc(10% - 4px);
+
+  &:not([class*="kbd-"]) {
+    font-size: 1.25rem;
+  }
 
   &:active {
     filter: drop-shadow(0 1px 0.5px oklch(var(--prussian-blue) / 0.8));
@@ -211,4 +238,50 @@ button {
 
 [hidden][hidden] {
   display: none;
+}
+
+.btn {
+  background: oklch(var(--air-superiority-blue));
+  border-radius: 0.33rem;
+  color: #fff;
+  padding: 0.4rem 1rem;
+}
+
+.shake {
+  animation: shake 1s linear;
+  color: oklch(var(--fire-brick));
+}
+
+@keyframes shake {
+  12.5% {
+    translate: -0.5rem;
+  }
+
+  25% {
+    translate: 0.5rem;
+  }
+
+  37.5% {
+    translate: -0.5rem;
+  }
+
+  50% {
+    translate: 0.5rem;
+  }
+
+  62.5% {
+    translate: -0.5rem;
+  }
+
+  75% {
+    translate: 0.5rem;
+  }
+
+  87.5% {
+    translate: -0.5rem;
+  }
+
+  100% {
+    translate: 0;
+  }
 }
