@@ -19,7 +19,21 @@
     <link rel="manifest" href="site.webmanifest">
   </head>
   <body>
-    <main>
+    <main id="pregame">
+      <h1 aria-label="Remojibus">🚌</h1>
+
+      <div class="btns">
+        <button class="btn" data-start>Start game</button>
+        <button class="btn" popovertarget="help-popover">How to play</button>
+        <button class="btn" popovertarget="settings-popover">Settings</button>
+      </div>
+
+      <p>
+        © 2024 <a href="https://iamdanielmarino.com" target="_blank">Daniel Marino</a>
+      </p>
+    </main>
+
+    <main id="game" hidden>
       <header>
         <button popovertarget="help-popover" aria-label="Learn how to play">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -29,7 +43,7 @@
           </svg>
         </button>
 
-        <h1>00:00:00</h1>
+        <div id="timer">00:00:00</div>
 
         <button popovertarget="settings-popover" aria-label="Show game settings">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -95,6 +109,18 @@
       </footer>
     </main>
 
+    <main id="win" hidden>
+      <h1 aria-label="Tada emoji">🎉</h1>
+      <h2>Congrats!</h2>
+      <p>You’ve completed puzzle ###.</p>
+
+      <div class="btns">
+        <button class="btn" data-reset>Start new game</button>
+        <button class="btn" popovertarget="help-popover">How to play</button>
+        <button class="btn" popovertarget="settings-popover">Settings</button>
+      </div>
+    </main>
+
     <div id="help-popover" popover>
       <h2>How to play</h2>
     </div>
@@ -123,7 +149,7 @@
       </fieldset>
 
       <p>
-        © 2024 <a href="https://iamdanielmarino.com">Daniel Marino</a>
+        © 2024 <a href="https://iamdanielmarino.com" target="_blank">Daniel Marino</a>
       </p>
     </div>
 
