@@ -30,12 +30,23 @@ body {
   line-height: 1.2;
   overscroll-behavior: none;
   -webkit-text-size-adjust: 100%;
+  text-align: center;
   text-wrap: pretty;
 }
 
 main {
   display: grid;
   height: 100dvh;
+
+  &:not(hidden) .emoji {
+    font-size: 8rem;
+    transition: all 0.5s 0.25s;
+
+    @starting-style {
+      opacity: 0;
+      scale: 0.8;
+    }
+  }
 }
 
 header {
@@ -52,16 +63,6 @@ h2 {
   text-wrap: balance;
 }
 
-h1 {
-  font-size: 8rem;
-  transition: all 0.5s 0.25s;
-
-  @starting-style {
-    opacity: 0;
-    scale: 0.8;
-  }
-}
-
 h2 {
   font-size: 2rem;
   margin-block: var(--space-lg);
@@ -69,7 +70,6 @@ h2 {
 
 p {
   margin-block: var(--space-lg);
-  text-align: center;
 }
 
 a,
@@ -135,6 +135,7 @@ button {
   inset: auto 0 0 0;
   overflow: hidden;
   padding: var(--space-lg);
+  text-align: left;
   transition: all 0.25s 0.15s;
   width: 100vw;
 
@@ -162,6 +163,11 @@ button {
 #pregame {
   grid-template-rows: 2fr min-content 1fr;
   place-items: center;
+
+  footer {
+    align-self: flex-end;
+    margin: var(--space-lg);
+  }
 }
 
 #win {
@@ -173,15 +179,6 @@ button {
 
 #game {
   grid-template-rows: min-content 1fr min-content;
-}
-
-#timer {
-  display: none;
-  font-size: inherit;
-
-  :has(#game-timer:checked) & {
-    display: block;
-  }
 }
 
 #puzzle {
@@ -218,7 +215,6 @@ button {
   min-height: 4ch;
   overflow-x: clip;
   padding: 1ch;
-  text-align: center;
   text-transform: uppercase;
   width: 100vw;
   text-size-adjust: auto;
@@ -272,7 +268,13 @@ button {
   }
 }
 
+.puzzle-timer {
+  display: none;
 
+  :has(#game-timer:checked) & {
+    display: block;
+  }
+}
 
 .btns {
   display: flex;

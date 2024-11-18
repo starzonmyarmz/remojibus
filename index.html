@@ -20,7 +20,10 @@
   </head>
   <body>
     <main id="pregame">
-      <h1 aria-label="Remojibus">🚌</h1>
+      <div>
+        <div class="emoji" aria-hidden="true">🚌</div>
+        <h1>Remojibus</h1>
+      </div>
 
       <div class="btns">
         <button class="btn" data-start>Start game</button>
@@ -28,9 +31,9 @@
         <button class="btn" popovertarget="settings-popover">Settings</button>
       </div>
 
-      <p>
+      <footer>
         © 2024 <a href="https://iamdanielmarino.com" target="_blank">Daniel Marino</a>
-      </p>
+      </footer>
     </main>
 
     <main id="game" hidden>
@@ -43,7 +46,7 @@
           </svg>
         </button>
 
-        <div id="timer">00:00:00</div>
+        <div id="timer" data-timer>00:00:00</div>
 
         <button popovertarget="settings-popover" aria-label="Show game settings">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -56,7 +59,7 @@
       <section id="puzzle"></section>
 
       <footer>
-        <div id="guess"></div>
+        <div id="guess" contentEditable></div>
 
         <div id="keyboard">
           <div class="row">
@@ -110,12 +113,15 @@
     </main>
 
     <main id="win" hidden>
-      <h1 aria-label="Tada emoji">🎉</h1>
-      <h2>Congrats!</h2>
-      <p>You’ve completed puzzle ###.</p>
+      <div>
+        <div class="emoji" aria-hidden="true">🎉</div>
+        <h1>Congrats!</h1>
+        <p>You solved <span data-id></span>
+          <span class="puzzle-timer">in <span data-timer></span></span></p>
+      </div>
 
       <div class="btns">
-        <button class="btn" data-reset>Start new game</button>
+        <button class="btn" data-start>Start new game</button>
         <button class="btn" popovertarget="help-popover">How to play</button>
         <button class="btn" popovertarget="settings-popover">Settings</button>
       </div>
@@ -135,22 +141,20 @@
 
       <fieldset>
         <label for="game-audio">Enable game sound effects</label>
-        <input type="checkbox" id="game-audio" switch>
+        <input type="checkbox" id="game-audio" switch checked>
       </fieldset>
 
       <fieldset>
         <label for="game-timer">Enable game timer</label>
-        <input type="checkbox" id="game-timer" switch>
+        <input type="checkbox" id="game-timer" switch checked>
       </fieldset>
 
       <fieldset>
         <button class="btn" data-share>Share game</button>
-        <button class="btn" data-reset>Erase data</button>
+        <button class="btn" data-erase>Erase data</button>
       </fieldset>
 
-      <p>
-        © 2024 <a href="https://iamdanielmarino.com" target="_blank">Daniel Marino</a>
-      </p>
+      <p data-id hidden>Puzzle ###</p>
     </div>
 
     <script src="script.js"></script>
