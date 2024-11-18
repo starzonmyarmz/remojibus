@@ -1,9 +1,17 @@
+// https://www.rd.com/list/emoji-riddles/
+
 const s = localStorage
 const d = document
 
 let currentPuzzle
 let currentPuzzleId
 let currentAnswer
+
+anyPuzzles = () => {
+  let puzzlesCount = JSON.parse(s.getItem('remojibusPuzzles')).length
+  let completedCount = JSON.parse(s.getItem('remojibusCompleted')).length
+  return puzzlesCount !== completedCount
+}
 
 d.addEventListener('DOMContentLoaded', () => {
   if (s.getItem('remojibusPuzzles') == null) {
@@ -25,6 +33,13 @@ d.addEventListener('DOMContentLoaded', () => {
   if (s.getItem('remojibusTimer') !== null) {
     d.getElementById('game-timer').checked = JSON.parse(s.getItem('remojibusTimer'))
   }
+
+  if (!anyPuzzles()) {
+    d.querySelector('#pregame').hidden = true
+    d.querySelector('#game').hidden = true
+    d.querySelector('#win').hidden = true
+    d.querySelector('#dunzo').hidden = false
+  }
 })
 
 d.addEventListener('click', ({ target }) => {
@@ -32,14 +47,21 @@ d.addEventListener('click', ({ target }) => {
   const currentValue = guessEl.textContent
 
   if (target.closest('[data-start]')) {
-    d.querySelector('#pregame').hidden = true
-    d.querySelector('#game').hidden = false
-    d.querySelector('#win').hidden = true
-    d.querySelector('#guess').textContent = ''
+    if (anyPuzzles()) {
+      d.querySelector('#pregame').hidden = true
+      d.querySelector('#game').hidden = false
+      d.querySelector('#win').hidden = true
+      d.querySelector('#guess').textContent = ''
 
-    getPuzzle()
-    resetTimer()
-    startTimer()
+      getPuzzle()
+      resetTimer()
+      startTimer()
+    } else {
+      d.querySelector('#pregame').hidden = true
+      d.querySelector('#game').hidden = true
+      d.querySelector('#win').hidden = true
+      d.querySelector('#dunzo').hidden = false
+    }
   }
 
   if (target.closest('[data-letter]')) {
@@ -84,17 +106,14 @@ d.addEventListener('change', ({ target }) => {
 })
 
 function getPuzzle() {
-  let puzzlesCount = JSON.parse(s.getItem('remojibusPuzzles')).length
-  let completedCount = JSON.parse(s.getItem('remojibusCompleted')).length
-
-  if (puzzlesCount === completedCount) return
+  if (!anyPuzzles()) return
 
   let findingPuzzle = true
   let random
   let puzzles
 
   while (findingPuzzle) {
-    random = Math.floor(Math.random() * puzzlesCount)
+    random = Math.floor(Math.random() * JSON.parse(s.getItem('remojibusPuzzles')).length)
     puzzles = JSON.parse(s.getItem('remojibusCompleted'))
 
     if (puzzles.findIndex((el) => el === random) === -1) {
@@ -122,9 +141,9 @@ async function getPuzzles() {
   s.setItem('remojibusPuzzles', JSON.stringify(data))
 }
 
-// https://www.rd.com/list/emoji-riddles/
 
 
+// Timer
 
 let startTime
 let timerInterval

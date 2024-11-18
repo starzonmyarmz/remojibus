@@ -175,11 +175,16 @@ button {
   place-items: center;
 }
 
-
-
 #game {
   grid-template-rows: min-content 1fr min-content;
 }
+
+#dunzo {
+  padding: var(--space-lg);
+  place-content: center;
+}
+
+
 
 #puzzle {
   display: flex;
