@@ -8,12 +8,14 @@ let currentPuzzleId
 let currentAnswer
 
 anyPuzzles = () => {
-  let puzzlesCount = JSON.parse(s.getItem('remojibusPuzzles')).length
+  let puzzlesCount = JSON.parse(s.getItem('remojibusPuzzles') || 0).length
   let completedCount = JSON.parse(s.getItem('remojibusCompleted')).length
   return puzzlesCount !== completedCount
 }
 
 d.addEventListener('DOMContentLoaded', () => {
+  d.querySelector('[data-share]').hidden = !navigator.canShare()
+
   if (s.getItem('remojibusPuzzles') == null) {
     getPuzzles()
   }
@@ -97,6 +99,14 @@ d.addEventListener('click', ({ target }) => {
       })
     }
   }
+})
+
+d.querySelector('[data-share]').addEventListener('click', async () => {
+  await navigator.share({
+    title: "Remojibus",
+    text: "",
+    url: "",
+  })
 })
 
 d.addEventListener('change', ({ target }) => {
