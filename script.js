@@ -2,7 +2,11 @@
 
 const s = localStorage
 const d = document
+const v = 1
 
+let soundTick
+let soundDoh
+let soundYay
 let currentPuzzle
 let currentPuzzleId
 let currentAnswer
@@ -14,14 +18,24 @@ anyPuzzles = () => {
 }
 
 d.addEventListener('DOMContentLoaded', () => {
+  soundTick = d.querySelector('[data-sound-tick')
+  soundDoh = d.querySelector('[data-sound-doh')
+  soundYay = d.querySelector('[data-sound-yay')
+  playSound = d.querySelector('#game-audio')
+
   d.querySelector('[data-share]').hidden = !navigator.canShare()
 
-  if (s.getItem('remojibusPuzzles') == null) {
+  if (s.getItem('remojibusPuzzles') == null || s.getItem('remojibusVersion') < v) {
     getPuzzles()
+    s.setItem('remojibusVersion', v)
   }
 
   if (s.getItem('remojibusCompleted') == null) {
     s.setItem('remojibusCompleted', JSON.stringify([]))
+  }
+
+  if (s.getItem('remojibusHints') !== null) {
+    d.getElementById('hints').checked = JSON.parse(s.getItem('remojibusHints'))
   }
 
   if (s.getItem('remojibusGroupWords') !== null) {
@@ -55,6 +69,8 @@ d.addEventListener('click', ({ target }) => {
       d.querySelector('#win').hidden = true
       d.querySelector('#guess').textContent = ''
 
+      if (playSound.checked) soundTick.play()
+
       getPuzzle()
       resetTimer()
       startTimer()
@@ -68,14 +84,17 @@ d.addEventListener('click', ({ target }) => {
 
   if (target.closest('[data-letter]')) {
     guessEl.textContent = `${currentValue}${target.textContent}`
+    if (playSound.checked) soundTick.play()
   }
 
   if (target.closest('[data-space]')) {
     guessEl.textContent = `${currentValue} `
+    if (playSound.checked) soundTick.play()
   }
 
   if (target.closest('[data-delete]')) {
     guessEl.textContent = currentValue.substring(0, currentValue.length - 1)
+    if (playSound.checked) soundTick.play()
   }
 
   if (target.closest('[data-erase]')) {
@@ -87,12 +106,15 @@ d.addEventListener('click', ({ target }) => {
       d.querySelector('#game').hidden = true
       d.querySelector('#win').hidden = false
 
+      if (playSound.checked) soundYay.play()
+
       stopTimer()
 
       let newArray = JSON.parse(s.getItem('remojibusCompleted'))
       newArray.push(currentPuzzleId)
       s.setItem('remojibusCompleted', JSON.stringify(newArray))
     } else {
+      if (playSound.checked) soundDoh.play()
       guessEl.classList.add('shake')
       guessEl.addEventListener('animationend', () => {
         guessEl.classList.remove('shake')
@@ -110,6 +132,7 @@ d.querySelector('[data-share]').addEventListener('click', async () => {
 })
 
 d.addEventListener('change', ({ target }) => {
+  if (target.closest('#hints')) s.setItem('remojibusHints', target.checked)
   if (target.closest('#group-words')) s.setItem('remojibusGroupWords', target.checked)
   if (target.closest('#game-audio')) s.setItem('remojibusAudio', target.checked)
   if (target.closest('#game-timer')) s.setItem('remojibusTimer', target.checked)
@@ -140,7 +163,8 @@ function getPuzzle() {
   }
 
   d.querySelector('#puzzle').innerHTML = words.join('')
-  d.querySelectorAll('[data-id]').forEach((el) => { el.textContent = `puzzle #${currentPuzzleId + 1}` })
+  d.querySelector('[data-id]').textContent = `puzzle #${currentPuzzleId + 1}`
+  d.querySelector('#hint').textContent = `Hint: ${currentPuzzle.hint}`
 
   currentAnswer = currentPuzzle.answer
 }

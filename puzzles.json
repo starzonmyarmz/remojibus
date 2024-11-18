@@ -3,6 +3,7 @@
     "puzzle": [
       "👋"
     ],
+    "hint": "",
     "answer": "hi"
   },
   {
@@ -11,6 +12,7 @@
       "🔵",
       "🌙"
     ],
+    "hint": "",
     "answer": "once in a blue moon"
   },
   {
@@ -18,6 +20,7 @@
       "💃",
       "👸"
     ],
+    "hint": "",
     "answer": "dancing queen"
   },
   {
@@ -25,6 +28,7 @@
       "🤐",
       "🐑🐑"
     ],
+    "hint": "Movie",
     "answer": "silence of the lambs"
   },
   {
@@ -33,6 +37,14 @@
       "🐈🐈‍⬛",
       "🐕🐩"
     ],
+    "hint": "The weather",
     "answer": "raining cats and dogs"
+  },
+  {
+    "puzzle": [
+      "🐶"
+    ],
+    "hint": "Dog",
+    "answer": "dog"
   }
 ]

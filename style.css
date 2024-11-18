@@ -51,8 +51,8 @@ main {
 
 header {
   align-items: center;
-  background: oklch(var(--prussian-blue));
-  color: #fff;
+  /* background: oklch(var(--prussian-blue)); */
+  /* color: #fff; */
   display: flex;
   justify-content: space-between;
   padding: var(--space-lg);
@@ -227,6 +227,14 @@ button {
   &.shake {
     animation: shake 0.75s linear;
     color: oklch(var(--fire-brick));
+  }
+}
+
+#hint {
+  display: none;
+
+  :has(#hints:checked) & {
+    display: block;
   }
 }
 

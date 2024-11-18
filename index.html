@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="oklch(0.98 0.02 86.01)">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="oklch(0.98 0.02 86.01)">
+    <meta name="apple-mobile-web-app-title" content="Remojibus">
+    <meta name="application-name" content="Remojibus">
 
     <title>Remojibus</title>
 
@@ -59,6 +63,7 @@
       <section id="puzzle"></section>
 
       <footer>
+        <div id="hint"></div>
         <div id="guess" contentEditable></div>
 
         <div id="keyboard">
@@ -144,6 +149,11 @@
       <h2>Settings</h2>
 
       <fieldset>
+        <label for="hints">Show hints</label>
+        <input type="checkbox" id="hints" switch>
+      </fieldset>
+
+      <fieldset>
         <label for="group-words">Group emojis by words</label>
         <input type="checkbox" id="group-words" switch>
       </fieldset>
@@ -162,9 +172,11 @@
         <button class="btn" data-share>Share game</button>
         <button class="btn" data-erase>Erase data</button>
       </fieldset>
-
-      <p data-id hidden>Puzzle ###</p>
     </div>
+
+    <audio src="tick.mp3" preload data-sound-tick/>
+    <audio src="yay.mp3" preload data-sound-yay/>
+    <audio src="doh.mp3" preload data-sound-doh/>
 
     <script src="script.js"></script>
   </body>
