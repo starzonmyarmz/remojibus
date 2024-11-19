@@ -51,8 +51,6 @@ main {
 
 header {
   align-items: center;
-  /* background: oklch(var(--prussian-blue)); */
-  /* color: #fff; */
   display: flex;
   justify-content: space-between;
   padding: var(--space-lg);
@@ -206,7 +204,7 @@ button {
     }
 
     :has(#group-words:checked) & {
-      border: 2px solid oklch(var(--air-superiority-blue));
+      border: 2px solid oklch(var(--prussian-blue));
       border-radius: var(--space-md);
       padding: var(--space-md);
       text-indent: var(--space-md);
