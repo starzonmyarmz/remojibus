@@ -1,225 +1,171 @@
 [
   {
-    "puzzle": [
-      "☝️",
-      "🔵",
-      "🌙"
-    ],
+    "puzzle": ["☝️", "🔵🌙"],
     "hint": "rare moment",
-    "answer": "once in a blue moon"
+    "answer": "once in a blue moon",
+    "words": ["once", "blue moon"]
   },
   {
-    "puzzle": [
-      "💃",
-      "👸"
-    ],
+    "puzzle": ["💃", "👸"],
     "hint": "song by ABBA",
     "answer": "dancing queen"
   },
   {
-    "puzzle": [
-      "🤐",
-      "🐑🐑"
-    ],
+    "puzzle": ["🤐", "🐑🐑"],
     "hint": "a 1990s thriller film",
-    "answer": "silence of the lambs"
+    "answer": "silence of the lambs",
+    "words": ["silence", "lambs"]
   },
   {
-    "puzzle": [
-      "🌧️",
-      "🐈🐈‍⬛",
-      "🐕🐩"
-    ],
+    "puzzle": ["🌧️", "🐈🐈‍⬛", "🐕🐩"],
     "hint": "heavy precipitation",
-    "answer": "raining cats and dogs"
+    "answer": "raining cats and dogs",
+    "words": ["raining", "cats", "dogs"]
   },
   {
-    "puzzle": [
-      "🙎🏻‍♂️➡️😡➡️💪🏻🟢"
-    ],
-    "hint": "movie about an angry scientist",
-    "answer": "incredible hulk"
-  },
-  {
-    "puzzle": [
-      "⌚︎🐶"
-    ],
+    "puzzle": ["⌚︎🐶"],
     "hint": "keeps an eye out",
     "answer": "watchdog"
   },
   {
-    "puzzle": [
-      "👈2️⃣⬛️1️⃣"
-    ],
+    "puzzle": ["👈", "2️⃣", "⬛️1️⃣"],
     "hint": "to start over",
     "answer": "back to square one"
   },
   {
-    "puzzle": [
-      "🧈🖐️"
-    ],
+    "puzzle": ["🧈🖐️"],
     "hint": "a clumsy person... or candybar",
     "answer": "butterfingers"
   },
   {
-    "puzzle": [
-      "🍎☀️👨‍⚕️🛑"
-    ],
+    "puzzle": ["🍎", "☀️", "👨‍⚕️", "✋"],
     "hint": "be healthy",
-    "answer": "apple a day keeps the doctor away"
+    "answer": "apple a day keeps the doctor away",
+    "words": ["apple", "day", "doctor", "away"]
   },
   {
-    "puzzle": [
-      "🏠🍬🏠"
-    ],
+    "puzzle": ["🏠", "🍬", "🏠"],
     "hint": "it’s good to be back",
     "answer": "home sweet home"
   },
   {
-    "puzzle": [
-      "❤️✉️"
-    ],
+    "puzzle": ["❤️", "✉️"],
     "hint": "send affection",
     "answer": "love letter"
   },
   {
-    "puzzle": [
-      "💔🧊"
-    ],
+    "puzzle": ["💔", "🧊"],
     "hint": "relieve social tension",
-    "answer": "break the ice"
+    "answer": "break the ice",
+    "words": ["break", "ice"]
   },
   {
-    "puzzle": [
-      "👐⬇️"
-    ],
+    "puzzle": ["👐", "⬇️"],
     "hint": "easily",
     "answer": "hands down"
   },
   {
-    "puzzle": [
-      "🐺🐑👚👖"
-    ],
+    "puzzle": ["🐺", "🐑", "👚👖"],
     "hint": "disguised",
-    "answer": "wolf in sheeps clothing"
+    "answer": "wolf in sheeps clothing",
+    "words": ["wolf", "sheeps", "clothing"]
   },
   {
-    "puzzle": [
-      "💔🍗"
-    ],
+    "puzzle": ["💔", "🍗"],
     "hint": "good luck",
-    "answer": "break a leg"
+    "answer": "break a leg",
+    "words": ["break", "leg"]
   },
   {
-    "puzzle": [
-      "⏳✈️"
-    ],
+    "puzzle": ["⏳", "✈️"],
     "hint": "fast",
     "answer": "time flies"
   },
   {
-    "puzzle": [
-      "🌅🦜🫴🪱"
-    ],
+    "puzzle": ["🌅🦜", "🫴", "🪱"],
     "hint": "don’t waste time",
-    "answer": "early bird catches the worm"
+    "answer": "early bird catches the worm",
+    "words": ["early", "bird", "catches", "worm"]
   },
   {
-    "puzzle": [
-      "🔫🐦🐦🪨"
-    ],
+    "puzzle": ["🔫", "🐦🐦", "🪨"],
     "hint": "save time",
-    "answer": "kill two birds with one stone"
+    "answer": "kill two birds with one stone",
+    "words": ["kill", "two birds", "one stone"]
   },
   {
-    "puzzle": [
-      "🐈👜"
-    ],
+    "puzzle": ["🐈", "👜"],
     "hint": "the secret is out",
-    "answer": "cat out of the bag"
+    "answer": "cat out of the bag",
+    "words": ["cat", "out", "bag"]
   },
   {
-    "puzzle": [
-      "⏰💵"
-    ],
+    "puzzle": ["⏰", "🟰", "💵"],
     "hint": "act quickly",
     "answer": "time is money"
   },
   {
-    "puzzle": [
-      "🥶🦃"
-    ],
+    "puzzle": ["🥶", "🦃"],
     "hint": "to quit altogether",
     "answer": "cold turkey"
   },
   {
-    "puzzle": [
-      "🐷🐷✈️"
-    ],
+    "puzzle": ["🐷🐷", "✈️"],
     "hint": "it will never happen",
-    "answer": "pigs fly"
+    "answer": "when pigs fly",
+    "words": ["pigs", "fly"]
   },
   {
-    "puzzle": [
-      "🚀🔬🧪"
-    ],
+    "puzzle": ["🚀", "🔬🧪"],
     "hint": "a difficult field",
     "answer": "rocket science"
   },
   {
-    "puzzle": [
-      "👩🏻‍🏫👩🏻‍🏫🐰"
-    ],
+    "puzzle": ["👩🏻‍🏫👩🏻‍🏫", "🐰"],
     "hint": "be a kiss up",
     "answer": "teachers pet"
   },
   {
-    "puzzle": [
-      "📖📈📉"
-    ],
+    "puzzle": ["📖", "📈📉"],
     "hint": "to understand the subtleties",
-    "answer": "read between the lines"
+    "answer": "read between the lines",
+    "words": ["read between", "lines"]
   },
   {
-    "puzzle": [
-      "👫🐴🐴"
-    ],
+    "puzzle": ["👫", "🐴🐴"],
     "hint": "now wait a minute",
-    "answer": "hold your horses"
+    "answer": "hold your horses",
+    "words": ["hold", "horses"]
   },
   {
-    "puzzle": [
-      "😼✂️😛"
-    ],
+    "puzzle": ["😼", "✂️", "😛"],
     "hint": "quiet",
-    "answer": "cat cut your tongue"
+    "answer": "cat cut your tongue",
+    "words": ["cat cut", "tongue"]
   },
   {
-    "puzzle": [
-      "🐇🕳️"
-    ],
+    "puzzle": ["🐇", "🕳️"],
     "hint": "a strange situation",
     "answer": "rabbit hole"
   },
   {
-    "puzzle": [
-      "🦵🪣"
-    ],
+    "puzzle": ["🦵", "🪣"],
     "hint": "die",
     "answer": "kick the bucket"
   },
   {
-    "puzzle": [
-      "🟪🌧️"
-    ],
+    "puzzle": ["🟪", "🌧️"],
     "hint": "song by Prince",
     "answer": "purple rain"
   },
   {
-    "puzzle": [
-      "🔫🔫🌹🌹"
-    ],
+    "puzzle": ["🔫🔫", "🌹🌹"],
     "hint": "Rock band of the 1980s",
     "answer": "guns and roses"
+  },
+  {
+    "puzzle": ["🔥", "🕳️"],
+    "hint": "explosive is imminent",
+    "answer": "fire in the hole"
   }
 ]

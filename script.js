@@ -2,7 +2,7 @@
 
 const s = localStorage
 const d = document
-const v = 3
+const v = 6
 
 let soundTick
 let soundDoh
