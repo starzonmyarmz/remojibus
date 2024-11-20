@@ -59,7 +59,7 @@ d.addEventListener('DOMContentLoaded', () => {
 })
 
 d.addEventListener('click', ({ target }) => {
-  const guessEl = d.querySelector('#guess')
+  const guessEl = d.querySelector('#guess span')
   const currentValue = guessEl.textContent
 
   if (target.closest('[data-start]')) {
@@ -67,7 +67,7 @@ d.addEventListener('click', ({ target }) => {
       d.querySelector('#pregame').hidden = true
       d.querySelector('#game').hidden = false
       d.querySelector('#win').hidden = true
-      d.querySelector('#guess').textContent = ''
+      d.querySelector('#guess span').textContent = ''
 
       if (playSound.checked) soundTick.play()
 

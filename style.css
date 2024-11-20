@@ -222,14 +222,23 @@ button {
   width: 100vw;
   text-size-adjust: auto;
 
-  &.shake {
-    animation: shake 0.75s linear;
-    color: oklch(var(--fire-brick));
+  span {
+    animation: cursor 1.5s infinite steps(2);
+    border-right: 2px solid transparent;
+    display: inline-block;
+    padding-right: 2px;
+
+    &.shake {
+      animation: shake 0.75s linear;
+      color: oklch(var(--fire-brick));
+    }
   }
 }
 
 #hint {
+  border-top: 1px solid oklch(var(--air-superiority-blue) / 0.25);
   display: none;
+  padding: var(--space-md);
 
   :has(#hints:checked) & {
     display: block;
@@ -255,15 +264,15 @@ button {
     filter: drop-shadow(0 1.5px 1px oklch(var(--prussian-blue) / 0.8));
     display: grid;
     height: 40px;
+    min-width: calc(10% - var(--space-sm));
     place-items: center;
     text-transform: uppercase;
-    width: calc(10% - var(--space-sm));
 
     &:not([class*="kbd-"]) {
       font-size: 1.25rem;
     }
 
-    &:active {
+    &:is(:active, :hover) {
       filter: drop-shadow(0 1px 0.5px oklch(var(--prussian-blue) / 0.8));
       translate: 0 2px;
     }
@@ -297,11 +306,18 @@ button {
   background: oklch(var(--prussian-blue));
   border-radius: var(--space-md);
   color: #fff;
+  min-height: 48px;
   min-width: 40vw;
   padding: var(--space-md);
 }
 
 
+
+@keyframes cursor {
+  to {
+    border-right-color: oklch(var(--prussian-blue));
+  }
+}
 
 @keyframes shake {
   12.5% {
