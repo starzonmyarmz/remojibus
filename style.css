@@ -232,7 +232,7 @@ button {
       padding-right: 2px;
     }
 
-    .shake & {
+    &.shake {
       animation: shake 0.75s linear;
       color: oklch(var(--fire-brick));
     }
@@ -334,20 +334,13 @@ button {
 }
 
 @keyframes shake {
-  12.5% { translate: calc(-1 * var(--space-md)); }
-  25%   { translate: var(--space-md); }
-  37.5% { translate: calc(-1 * var(--space-md)); }
-  50%   { translate: var(--space-md); }
-  62.5% { translate: calc(-1 * var(--space-md)); }
-  75%   { translate: var(--space-md); }
-  87.5% { translate: calc(-1 * var(--space-md)); }
+  12.5% { translate: calc(-1 * var(--space-sm)); }
+  25%   { translate: var(--space-sm); }
+  37.5% { translate: calc(-1 * var(--space-sm)); }
+  50%   { translate: var(--space-sm); }
+  62.5% { translate: calc(-1 * var(--space-sm)); }
+  75%   { translate: var(--space-sm); }
+  87.5% { translate: calc(-1 * var(--space-sm)); }
   100%  { translate: 0; }
 }
 
-
-
-/* Desktop tweaks */
-
-@media (width >= 800px) {
-
-}

@@ -138,8 +138,8 @@ function submitPuzzle(val) {
   // Puzzle is wrong
   if (!isAnswerCorrect) {
     if (playSound.checked) soundDoh.play()
-    guessEl.classList.add('shake')
-    guessEl.addEventListener('animationend', () => guessEl.classList.remove('shake'))
+    d.querySelectorAll('.w:not(.h)').forEach((el) => el.classList.add('shake'))
+    d.addEventListener('animationend', () => d.querySelectorAll('.w:not(.h)').forEach((el) => el.classList.remove('shake')))
   }
 }
 
