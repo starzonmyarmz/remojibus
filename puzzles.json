@@ -1,20 +1,21 @@
 [
   {
-    "puzzle": ["☝️", "🔵🌙"],
+    "puzzle": ["☝️", "🔵", "🌙"],
     "hint": "rare moment",
     "answer": "once in a blue moon",
-    "words": ["once", "blue moon"]
+    "words": ["once", "blue", "moon"]
   },
   {
     "puzzle": ["💃", "👸"],
     "hint": "song by ABBA",
-    "answer": "dancing queen"
+    "answer": "dancing queen",
+    "words": ["dancing", "queen"]
   },
   {
     "puzzle": ["🤐", "🐑🐑"],
     "hint": "a 1990s thriller film",
     "answer": "silence of the lambs",
-    "words": ["silence", "lambs"]
+    "words": ["silence", "of", "the", "lambs"]
   },
   {
     "puzzle": ["🌧️", "🐈🐈‍⬛", "🐕🐩"],
@@ -29,29 +30,32 @@
   },
   {
     "puzzle": ["👈", "2️⃣", "⬛️1️⃣"],
-    "hint": "to start over",
-    "answer": "back to square one"
+    "hint": "start over",
+    "answer": "back to square one",
+    "words": ["back", "to", "square", "one"]
   },
   {
     "puzzle": ["🧈🖐️"],
-    "hint": "a clumsy person... or candybar",
+    "hint": "a clumsy person… or candybar",
     "answer": "butterfingers"
   },
   {
     "puzzle": ["🍎", "☀️", "👨‍⚕️", "✋"],
     "hint": "be healthy",
     "answer": "apple a day keeps the doctor away",
-    "words": ["apple", "day", "doctor", "away"]
+    "words": ["apple", "day", "keeps", "doctor", "away"]
   },
   {
     "puzzle": ["🏠", "🍬", "🏠"],
     "hint": "it’s good to be back",
-    "answer": "home sweet home"
+    "answer": "home sweet home",
+    "words": ["home", "sweet", "home"]
   },
   {
     "puzzle": ["❤️", "✉️"],
     "hint": "send affection",
-    "answer": "love letter"
+    "answer": "love letter",
+    "words": ["love", "letter"]
   },
   {
     "puzzle": ["💔", "🧊"],
@@ -62,7 +66,8 @@
   {
     "puzzle": ["👐", "⬇️"],
     "hint": "easily",
-    "answer": "hands down"
+    "answer": "hands down",
+    "words": ["hands", "down"]
   },
   {
     "puzzle": ["🐺", "🐑", "👚👖"],
@@ -79,7 +84,8 @@
   {
     "puzzle": ["⏳", "✈️"],
     "hint": "fast",
-    "answer": "time flies"
+    "answer": "time flies",
+    "words": ["time", "flies"]
   },
   {
     "puzzle": ["🌅🦜", "🫴", "🪱"],
@@ -91,7 +97,7 @@
     "puzzle": ["🔫", "🐦🐦", "🪨"],
     "hint": "save time",
     "answer": "kill two birds with one stone",
-    "words": ["kill", "two birds", "one stone"]
+    "words": ["kill", "two", "birds", "one", "stone"]
   },
   {
     "puzzle": ["🐈", "👜"],
@@ -102,12 +108,14 @@
   {
     "puzzle": ["⏰", "🟰", "💵"],
     "hint": "act quickly",
-    "answer": "time is money"
+    "answer": "time is money",
+    "words": ["time", "is", "money"]
   },
   {
     "puzzle": ["🥶", "🦃"],
     "hint": "to quit altogether",
-    "answer": "cold turkey"
+    "answer": "cold turkey",
+    "words": ["cold", "turkey"]
   },
   {
     "puzzle": ["🐷🐷", "✈️"],
@@ -118,18 +126,20 @@
   {
     "puzzle": ["🚀", "🔬🧪"],
     "hint": "a difficult field",
-    "answer": "rocket science"
+    "answer": "rocket science",
+    "words": ["rocket", "science"]
   },
   {
     "puzzle": ["👩🏻‍🏫👩🏻‍🏫", "🐰"],
     "hint": "be a kiss up",
-    "answer": "teachers pet"
+    "answer": "teachers pet",
+    "words": ["teachers", "pet"]
   },
   {
     "puzzle": ["📖", "📈📉"],
     "hint": "to understand the subtleties",
     "answer": "read between the lines",
-    "words": ["read between", "lines"]
+    "words": ["read", "between", "lines"]
   },
   {
     "puzzle": ["👫", "🐴🐴"],
@@ -141,31 +151,36 @@
     "puzzle": ["😼", "✂️", "😛"],
     "hint": "quiet",
     "answer": "cat cut your tongue",
-    "words": ["cat cut", "tongue"]
+    "words": ["cat", "cut", "tongue"]
   },
   {
     "puzzle": ["🐇", "🕳️"],
     "hint": "a strange situation",
-    "answer": "rabbit hole"
+    "answer": "rabbit hole",
+    "words": ["rabbit", "hole"]
   },
   {
     "puzzle": ["🦵", "🪣"],
     "hint": "die",
-    "answer": "kick the bucket"
+    "answer": "kick the bucket",
+    "words": ["kick", "the", "bucket"]
   },
   {
     "puzzle": ["🟪", "🌧️"],
     "hint": "song by Prince",
-    "answer": "purple rain"
+    "answer": "purple rain",
+    "words": ["purple", "rain"]
   },
   {
     "puzzle": ["🔫🔫", "🌹🌹"],
     "hint": "Rock band of the 1980s",
-    "answer": "guns and roses"
+    "answer": "guns and roses",
+    "words": ["guns", "and", "roses"]
   },
   {
     "puzzle": ["🔥", "🕳️"],
     "hint": "explosive is imminent",
-    "answer": "fire in the hole"
+    "answer": "fire in the hole",
+    "words": ["fire", "in the", "hole"]
   }
 ]

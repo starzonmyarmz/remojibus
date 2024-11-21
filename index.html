@@ -50,7 +50,7 @@
           </svg>
         </button>
 
-        <div id="timer" data-timer>00:00:00</div>
+        <div class="puzzle-timer" data-timer>00:00:00</div>
 
         <button popovertarget="settings-popover" aria-label="Show game settings">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -64,7 +64,7 @@
 
       <footer>
 
-        <div id="guess"><span></span></div>
+        <div id="guess"><span id="guess-words" data-words=""></span></div>
         <div id="hint"></div>
 
         <div id="keyboard">
@@ -155,8 +155,13 @@
       </fieldset>
 
       <fieldset>
-        <label for="group-words">Group emojis by words</label>
+        <label for="group-words">Group emojis by word</label>
         <input type="checkbox" id="group-words" switch>
+      </fieldset>
+
+      <fieldset>
+        <label for="underline-words">Underline correct words</label>
+        <input type="checkbox" id="underline-words" switch>
       </fieldset>
 
       <fieldset>
@@ -175,9 +180,9 @@
       </fieldset>
     </div>
 
-    <audio src="tick.mp3" preload data-sound-tick/>
-    <audio src="yay.mp3" preload data-sound-yay/>
-    <audio src="doh.mp3" preload data-sound-doh/>
+    <audio src="tick.mp3" preload data-sound-tick></audio>
+    <audio src="yay.mp3" preload data-sound-yay></audio>
+    <audio src="doh.mp3" preload data-sound-doh></audio>
 
     <script src="script.js"></script>
   </body>

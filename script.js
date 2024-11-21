@@ -1,73 +1,52 @@
-// https://www.rd.com/list/emoji-riddles/
-
 const s = localStorage
 const d = document
-const v = 6
+const v = 7
 
 let soundTick
 let soundDoh
 let soundYay
+let guessEl
 let currentPuzzle
 let currentPuzzleId
 let currentAnswer
-
-anyPuzzles = () => {
-  let puzzlesCount = JSON.parse(s.getItem('remojibusPuzzles') || 0).length
-  let completedCount = JSON.parse(s.getItem('remojibusCompleted')).length
-  return puzzlesCount !== completedCount
-}
+let currentRequiredWords
 
 d.addEventListener('DOMContentLoaded', () => {
-  soundTick = d.querySelector('[data-sound-tick')
-  soundDoh = d.querySelector('[data-sound-doh')
-  soundYay = d.querySelector('[data-sound-yay')
+  soundTick = d.querySelector('[data-sound-tick]')
+  soundDoh = d.querySelector('[data-sound-doh]')
+  soundYay = d.querySelector('[data-sound-yay]')
+  guessEl = d.querySelector('#guess')
   playSound = d.querySelector('#game-audio')
 
+  // Hide share button if feature not supported
   d.querySelector('[data-share]').hidden = !navigator.canShare()
 
-  if (s.getItem('remojibusPuzzles') == null || s.getItem('remojibusVersion') < v) {
-    getPuzzles()
-    s.setItem('remojibusVersion', v)
-  }
+  // Check local storage for settings
+  if (s.getItem('remojibusPuzzles') == null || s.getItem('remojibusVersion') < v) getPuzzles()
+  if (s.getItem('remojibusCompleted') == null) s.setItem('remojibusCompleted', JSON.stringify([]))
+  if (s.getItem('remojibusHints') !== null) d.getElementById('hints').checked = JSON.parse(s.getItem('remojibusHints'))
+  if (s.getItem('remojibusUnderlineWords') !== null) d.getElementById('underline-words').checked = JSON.parse(s.getItem('remojibusUnderlineWords'))
+  if (s.getItem('remojibusGroupWords') !== null) d.getElementById('group-words').checked = JSON.parse(s.getItem('remojibusGroupWords'))
+  if (s.getItem('remojibusAudio') !== null) d.getElementById('game-audio').checked = JSON.parse(s.getItem('remojibusAudio'))
+  if (s.getItem('remojibusTimer') !== null) d.getElementById('game-timer').checked = JSON.parse(s.getItem('remojibusTimer'))
 
-  if (s.getItem('remojibusCompleted') == null) {
-    s.setItem('remojibusCompleted', JSON.stringify([]))
-  }
-
-  if (s.getItem('remojibusHints') !== null) {
-    d.getElementById('hints').checked = JSON.parse(s.getItem('remojibusHints'))
-  }
-
-  if (s.getItem('remojibusGroupWords') !== null) {
-    d.getElementById('group-words').checked = JSON.parse(s.getItem('remojibusGroupWords'))
-  }
-
-  if (s.getItem('remojibusAudio') !== null) {
-    d.getElementById('game-audio').checked = JSON.parse(s.getItem('remojibusAudio'))
-  }
-
-  if (s.getItem('remojibusTimer') !== null) {
-    d.getElementById('game-timer').checked = JSON.parse(s.getItem('remojibusTimer'))
-  }
-
+  // If all puzzles completed show the all done screen
   if (!anyPuzzles()) {
-    d.querySelector('#pregame').hidden = true
-    d.querySelector('#game').hidden = true
-    d.querySelector('#win').hidden = true
+    d.querySelectorAll('#pregame, #game, #win').forEach(el => el.hidden = true)
     d.querySelector('#dunzo').hidden = false
   }
 })
 
 d.addEventListener('click', ({ target }) => {
-  const guessEl = d.querySelector('#guess span')
-  const currentValue = guessEl.textContent
+  let currentValue = guessEl.dataset.words
 
+  // Start new puzzle
   if (target.closest('[data-start]')) {
     if (anyPuzzles()) {
-      d.querySelector('#pregame').hidden = true
+      d.querySelectorAll('#pregame, #win').forEach(el => el.hidden = true)
       d.querySelector('#game').hidden = false
-      d.querySelector('#win').hidden = true
-      d.querySelector('#guess span').textContent = ''
+      d.querySelector('#guess').textContent = ''
+      guessEl.dataset.words = ''
 
       if (playSound.checked) soundTick.play()
 
@@ -75,34 +54,80 @@ d.addEventListener('click', ({ target }) => {
       resetTimer()
       startTimer()
     } else {
-      d.querySelector('#pregame').hidden = true
-      d.querySelector('#game').hidden = true
-      d.querySelector('#win').hidden = true
+      d.querySelectorAll('#pregame, #game, #win').forEach(el => el.hidden = true)
       d.querySelector('#dunzo').hidden = false
     }
   }
 
+  // Type a letter
   if (target.closest('[data-letter]')) {
-    guessEl.textContent = `${currentValue}${target.textContent}`
+    guessEl.dataset.words = `${currentValue}${target.textContent}`
+
+    let thisText = guessEl.dataset.words.split(' ')
+    let thisHtml = []
+
+    for (let w of thisText) {
+      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
+    }
+
+    guessEl.innerHTML = thisHtml.join('')
+
     if (playSound.checked) soundTick.play()
   }
 
+  // Type a space
   if (target.closest('[data-space]')) {
-    guessEl.textContent = `${currentValue} `
+    guessEl.dataset.words = `${currentValue} `
+
+    let thisText = guessEl.dataset.words.split(' ')
+    let thisHtml = []
+
+    for (let w of thisText) {
+      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
+    }
+
+    guessEl.innerHTML = thisHtml.join('')
+
     if (playSound.checked) soundTick.play()
   }
 
+  // Backspace
   if (target.closest('[data-delete]')) {
-    guessEl.textContent = currentValue.substring(0, currentValue.length - 1)
+    guessEl.dataset.words = currentValue.substring(0, guessEl.dataset.words.length - 1)
+
+    let thisText = guessEl.dataset.words.split(' ')
+    let thisHtml = []
+
+    for (let w of thisText) {
+      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
+    }
+
+    guessEl.innerHTML = thisHtml.join('')
+
     if (playSound.checked) soundTick.play()
   }
 
-  if (target.closest('[data-erase]')) {
-    s.removeItem('remojibusPuzzles')
-  }
+  // Erase completed data
+  if (target.closest('[data-erase]')) s.removeItem('remojibusCompleted')
 
+  // Submit puzzle
   if (target.closest('[data-submit]')) {
-    if (guessEl.textContent.includes(currentAnswer)) {
+    let isAnswerCorrect = true
+    let leadingSpace
+    let trailingSpace
+
+    for (let [index, thisWord] of currentRequiredWords.entries()) {
+      leadingSpace = index > 0 ? ' ' : ''
+      trailingSpace = index < currentRequiredWords.length - 1 ? ' ' : ''
+
+      if (!currentValue.includes(`${leadingSpace}${thisWord}${trailingSpace}`)) {
+        isAnswerCorrect = false
+        break
+      }
+    }
+
+    // Puzzle is correct
+    if (isAnswerCorrect) {
       d.querySelector('#game').hidden = true
       d.querySelector('#win').hidden = false
 
@@ -113,19 +138,21 @@ d.addEventListener('click', ({ target }) => {
       let newArray = JSON.parse(s.getItem('remojibusCompleted'))
       newArray.push(currentPuzzleId)
       s.setItem('remojibusCompleted', JSON.stringify(newArray))
-    } else {
+    }
+
+    // Puzzle is wrong
+    if (!isAnswerCorrect) {
       if (playSound.checked) soundDoh.play()
       guessEl.classList.add('shake')
-      guessEl.addEventListener('animationend', () => {
-        guessEl.classList.remove('shake')
-      })
+      guessEl.addEventListener('animationend', () => guessEl.classList.remove('shake'))
     }
   }
 })
 
+// Share the puzzle
 d.querySelector('[data-share]').addEventListener('click', async () => {
   await navigator.share({
-    title: "Remojibus",
+    title: "🚌 Remojibus",
     text: "",
     url: "",
   })
@@ -133,6 +160,7 @@ d.querySelector('[data-share]').addEventListener('click', async () => {
 
 d.addEventListener('change', ({ target }) => {
   if (target.closest('#hints')) s.setItem('remojibusHints', target.checked)
+  if (target.closest('#underline-words')) s.setItem('remojibusUnderlineWords', target.checked)
   if (target.closest('#group-words')) s.setItem('remojibusGroupWords', target.checked)
   if (target.closest('#game-audio')) s.setItem('remojibusAudio', target.checked)
   if (target.closest('#game-timer')) s.setItem('remojibusTimer', target.checked)
@@ -142,6 +170,7 @@ function getPuzzle() {
   if (!anyPuzzles()) return
 
   let findingPuzzle = true
+  let wordsMarkup = []
   let random
   let puzzles
 
@@ -156,26 +185,30 @@ function getPuzzle() {
     }
   }
 
-  let words = []
-
   for (word of currentPuzzle.puzzle) {
-    words.push(`<div class="word">${word}</div>`)
+    wordsMarkup.push(`<div class="word">${word}</div>`)
   }
 
-  d.querySelector('#puzzle').innerHTML = words.join('')
+  d.querySelector('#puzzle').innerHTML = wordsMarkup.join('')
   d.querySelector('[data-id]').textContent = `puzzle #${currentPuzzleId + 1}`
   d.querySelector('#hint').textContent = `Hint: ${currentPuzzle.hint}`
 
   currentAnswer = currentPuzzle.answer
+  currentRequiredWords = currentPuzzle.words || [currentPuzzle.answer]
 }
 
 async function getPuzzles() {
   const response = await fetch('./puzzles.json')
   const data = await response.json()
   s.setItem('remojibusPuzzles', JSON.stringify(data))
+  s.setItem('remojibusVersion', v)
 }
 
-
+anyPuzzles = () => {
+  let puzzlesCount = JSON.parse(s.getItem('remojibusPuzzles') || 0).length
+  let completedCount = JSON.parse(s.getItem('remojibusCompleted')).length
+  return puzzlesCount !== completedCount
+}
 
 // Timer
 

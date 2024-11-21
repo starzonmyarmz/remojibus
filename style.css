@@ -105,7 +105,7 @@ fieldset {
   }
 
   input[type="checkbox"] {
-    accent-color: oklch(var(--air-superiority-blue));
+    accent-color: oklch(var(--prussian-blue));
   }
 }
 
@@ -159,7 +159,7 @@ button {
 
 
 #pregame {
-  grid-template-rows: 2fr min-content 1fr;
+  grid-template-rows: 4fr min-content 1fr;
   place-items: center;
 
   footer {
@@ -169,7 +169,7 @@ button {
 }
 
 #win {
-  grid-template-rows: 2fr min-content 1fr;
+  grid-template-rows: 4fr min-content 1fr;
   place-items: center;
 }
 
@@ -222,17 +222,29 @@ button {
   width: 100vw;
   text-size-adjust: auto;
 
-  span {
-    animation: cursor 1.5s infinite steps(2);
-    border-right: 2px solid transparent;
+  .w {
+    border-bottom: 2px solid transparent;
     display: inline-block;
-    padding-right: 2px;
+    line-height: 1;
+    margin-inline: 0.25ch;
+    min-height: 1em;
+    vertical-align: text-bottom;
 
-    &.shake {
+    &:last-child {
+      animation: cursor 1.5s infinite steps(2);
+      border-right: 2px solid transparent;
+      padding-right: 2px;
+    }
+
+    .shake & {
       animation: shake 0.75s linear;
       color: oklch(var(--fire-brick));
     }
   }
+}
+
+:has(#underline-words:checked) .h {
+  border-bottom: 2px solid currentColor;
 }
 
 #hint {
