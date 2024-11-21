@@ -296,6 +296,10 @@ button {
   }
 }
 
+#help-popover p {
+  line-height: 1.4;
+}
+
 .puzzle-timer {
   display: none;
 
