@@ -248,3 +248,11 @@ function updateTimer() {
 function pad(number) {
   return (number < 10 ? '0' : '') + number
 }
+
+
+// Hack to close popovers on iOS
+d.addEventListener('click', ({target}) => {
+  if (!d.querySelector(':popover-open')) return
+  if (target.closest(':popover-open')) return
+  d.querySelector(':popover-open').hidePopover()
+})

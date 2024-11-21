@@ -148,10 +148,10 @@
     "words": ["hold", "horses"]
   },
   {
-    "puzzle": ["😼", "✂️", "😛"],
-    "hint": "quiet",
-    "answer": "cat cut your tongue",
-    "words": ["cat", "cut", "tongue"]
+    "puzzle": ["😼", "🤏", "🫵", "👅"],
+    "hint": "a loss for words",
+    "answer": "cat got your tongue",
+    "words": ["cat", "got", "your", "tongue"]
   },
   {
     "puzzle": ["🐇", "🕳️"],
@@ -182,5 +182,29 @@
     "hint": "explosive is imminent",
     "answer": "fire in the hole",
     "words": ["fire", "in the", "hole"]
+  },
+  {
+    "puzzle": ["🔫", "💘"],
+    "hint": "song by Bon Jovi",
+    "answer": "shot through the heart",
+    "words": ["shot", "through", "heart"]
+  },
+  {
+    "puzzle": ["🔚", "💅", "⚰️"],
+    "hint": "the last straw",
+    "answer": "final nail in the coffin",
+    "words": ["final", "nail", "coffin"]
+  },
+  {
+    "puzzle": ["🐖🐖", "➡️", "🛏️"],
+    "hint": "hot dogs in a biscuit",
+    "answer": "pigs in a blanket",
+    "words": ["pigs", "in", "blanket"]
+  },
+  {
+    "puzzle": ["🐍", "👀"],
+    "hint": "a throw of two ones",
+    "answer": "snake eyes",
+    "words": ["snake", "eyes"]
   }
 ]
