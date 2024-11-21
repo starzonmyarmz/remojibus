@@ -15,12 +15,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  touch-action: manipulation;
-}
-
-* {
   margin: 0;
   user-select: none;
+  touch-action: none;
 }
 
 html, body {
@@ -72,11 +69,6 @@ h2 {
 
 p {
   margin-block: var(--space-lg);
-}
-
-a,
-button {
-
 }
 
 a {
@@ -325,6 +317,10 @@ button {
   min-height: 48px;
   min-width: 40vw;
   padding: var(--space-md);
+}
+
+[data-erase] {
+  background: oklch(var(--fire-brick))
 }
 
 
