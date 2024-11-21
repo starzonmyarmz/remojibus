@@ -36,6 +36,8 @@ body {
 main {
   display: grid;
   height: 100dvh;
+  margin-inline: auto;
+  width: min(100%, 800px);
 
   &:not(hidden) .emoji {
     font-size: 8rem;
@@ -213,7 +215,7 @@ button {
   overflow-x: clip;
   padding: 1ch;
   text-transform: uppercase;
-  width: 100vw;
+  width: 100%;
   text-size-adjust: auto;
 
   .w {
@@ -313,7 +315,7 @@ button {
   border-radius: var(--space-md);
   color: #fff;
   min-height: 48px;
-  min-width: 40vw;
+  width: min(50vw, 300px);
   padding: var(--space-md);
 }
 
@@ -336,4 +338,12 @@ button {
   75%   { translate: var(--space-md); }
   87.5% { translate: calc(-1 * var(--space-md)); }
   100%  { translate: 0; }
+}
+
+
+
+/* Desktop tweaks */
+
+@media (width >= 800px) {
+
 }
