@@ -18,9 +18,6 @@ d.addEventListener('DOMContentLoaded', () => {
   guessEl = d.querySelector('#guess')
   playSound = d.querySelector('#game-audio')
 
-  // Hide share button if feature not supported
-  d.querySelector('[data-share]').hidden = !navigator.canShare()
-
   // Check local storage for settings
   if (s.getItem('remojibusPuzzles') == null || s.getItem('remojibusVersion') < v) getPuzzles()
   if (s.getItem('remojibusCompleted') == null) s.setItem('remojibusCompleted', JSON.stringify([]))
