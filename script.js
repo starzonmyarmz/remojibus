@@ -59,26 +59,10 @@ d.addEventListener('click', ({ target }) => {
     }
   }
 
-
-
-  // letter, space, or delete
   if (target.closest('[data-letter]')) guessEl.dataset.words = `${currentValue}${target.textContent}`
   if (target.closest('[data-space]')) guessEl.dataset.words = `${currentValue} `
   if (target.closest('[data-delete]')) guessEl.dataset.words = currentValue.substring(0, guessEl.dataset.words.length - 1)
-
-  if (target.closest('[data-letter], [data-space], [data-delete]')) {
-    let thisText = guessEl.dataset.words.split(' ')
-    let thisHtml = []
-
-    for (let w of thisText) {
-      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
-    }
-
-    guessEl.innerHTML = thisHtml.join('')
-
-    if (playSound.checked) soundTick.play()
-  }
-
+  if (target.closest('[data-letter], [data-space], [data-delete]')) updateGuess()
   if (target.closest('[data-erase]')) s.removeItem('remojibusCompleted')
   if (target.closest('[data-submit]')) submitPuzzle(currentValue)
 })
@@ -108,20 +92,22 @@ d.addEventListener('keyup', (el) => {
   if ("abcdefghijklmnopqrstuvwxyz".includes(el.key)) guessEl.dataset.words = `${currentValue}${el.key}`
   if (el.key === ' ') guessEl.dataset.words = `${currentValue} `
   if (el.key === 'Backspace') guessEl.dataset.words = currentValue.substring(0, guessEl.dataset.words.length - 1)
-
-  if ('abcdefghijklmnopqrstuvwxyz'.includes(el.key) || el.key === ' ' || el.key === 'Backspace') {
-    let thisText = guessEl.dataset.words.split(' ')
-    let thisHtml = []
-
-    for (let w of thisText) {
-      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
-    }
-
-    guessEl.innerHTML = thisHtml.join('')
-  }
-
+  if ('abcdefghijklmnopqrstuvwxyz'.includes(el.key) || el.key === ' ' || el.key === 'Backspace') updateGuess()
   if (el.key === 'Enter') submitPuzzle(currentValue)
 })
+
+function updateGuess() {
+  let thisText = guessEl.dataset.words.split(' ')
+  let thisHtml = []
+
+  for (let w of thisText) {
+    thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
+  }
+
+  guessEl.innerHTML = thisHtml.join('')
+
+  if (playSound.checked) soundTick.play()
+}
 
 function submitPuzzle(val) {
   let isAnswerCorrect = true
