@@ -153,8 +153,8 @@ d.addEventListener('click', ({ target }) => {
 d.querySelector('[data-share]').addEventListener('click', async () => {
   await navigator.share({
     title: "🚌 Remojibus",
-    text: "",
-    url: "",
+    text: "Rebus puzzles… but with emojis",
+    url: "https://remojibus.iamdanielmarino.com",
   })
 })
 
