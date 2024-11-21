@@ -1,11 +1,9 @@
 :root {
-  --barn-red: 35.96% 0.1475 29.23;
   --fire-brick: 51.61% 0.2019 25.94;
   --papaya-whip: 95.84% 0.0381 85.35;
   --prussian-blue: 29.38% 0.0656 238.47;
   --air-superiority-blue: 66.5% 0.0747 236.79;
 
-  --space-xs: 0.125rem;
   --space-sm: 0.25rem;
   --space-md: 0.5rem;
   --space-lg: 1rem;
@@ -326,41 +324,16 @@ button {
 
 
 @keyframes cursor {
-  to {
-    border-right-color: oklch(var(--prussian-blue));
-  }
+  to { border-right-color: oklch(var(--prussian-blue)); }
 }
 
 @keyframes shake {
-  12.5% {
-    translate: calc(-1 * var(--space-md));
-  }
-
-  25% {
-    translate: var(--space-md);
-  }
-
-  37.5% {
-    translate: calc(-1 * var(--space-md));
-  }
-
-  50% {
-    translate: var(--space-md);
-  }
-
-  62.5% {
-    translate: calc(-1 * var(--space-md));
-  }
-
-  75% {
-    translate: var(--space-md);
-  }
-
-  87.5% {
-    translate: calc(-1 * var(--space-md));
-  }
-
-  100% {
-    translate: 0;
-  }
+  12.5% { translate: calc(-1 * var(--space-md)); }
+  25%   { translate: var(--space-md); }
+  37.5% { translate: calc(-1 * var(--space-md)); }
+  50%   { translate: var(--space-md); }
+  62.5% { translate: calc(-1 * var(--space-md)); }
+  75%   { translate: var(--space-md); }
+  87.5% { translate: calc(-1 * var(--space-md)); }
+  100%  { translate: 0; }
 }
