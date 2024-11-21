@@ -236,19 +236,18 @@ function resetTimer() {
 }
 
 function updateTimer() {
-  var currentTime = new Date().getTime()
-  var elapsedTime = currentTime - startTime
-  var seconds = Math.floor(elapsedTime / 1000) % 60
-  var minutes = Math.floor(elapsedTime / 1000 / 60) % 60
-  var hours = Math.floor(elapsedTime / 1000 / 60 / 60)
-  var displayTime = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
+  let currentTime = new Date().getTime()
+  let elapsedTime = currentTime - startTime
+  let seconds = Math.floor(elapsedTime / 1000) % 60
+  let minutes = Math.floor(elapsedTime / 1000 / 60) % 60
+  let hours = Math.floor(elapsedTime / 1000 / 60 / 60)
+  let displayTime = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
   d.querySelectorAll('[data-timer]').forEach((el) => { el.textContent = displayTime })
 }
 
 function pad(number) {
   return (number < 10 ? '0' : '') + number
 }
-
 
 // Hack to close popovers on iOS
 d.addEventListener('click', ({target}) => {
