@@ -59,10 +59,14 @@ d.addEventListener('click', ({ target }) => {
     }
   }
 
-  // Type a letter
-  if (target.closest('[data-letter]')) {
-    guessEl.dataset.words = `${currentValue}${target.textContent}`
 
+
+  // letter, space, or delete
+  if (target.closest('[data-letter]')) guessEl.dataset.words = `${currentValue}${target.textContent}`
+  if (target.closest('[data-space]')) guessEl.dataset.words = `${currentValue} `
+  if (target.closest('[data-delete]')) guessEl.dataset.words = currentValue.substring(0, guessEl.dataset.words.length - 1)
+
+  if (target.closest('[data-letter], [data-space], [data-delete]')) {
     let thisText = guessEl.dataset.words.split(' ')
     let thisHtml = []
 
@@ -75,78 +79,8 @@ d.addEventListener('click', ({ target }) => {
     if (playSound.checked) soundTick.play()
   }
 
-  // Type a space
-  if (target.closest('[data-space]')) {
-    guessEl.dataset.words = `${currentValue} `
-
-    let thisText = guessEl.dataset.words.split(' ')
-    let thisHtml = []
-
-    for (let w of thisText) {
-      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
-    }
-
-    guessEl.innerHTML = thisHtml.join('')
-
-    if (playSound.checked) soundTick.play()
-  }
-
-  // Backspace
-  if (target.closest('[data-delete]')) {
-    guessEl.dataset.words = currentValue.substring(0, guessEl.dataset.words.length - 1)
-
-    let thisText = guessEl.dataset.words.split(' ')
-    let thisHtml = []
-
-    for (let w of thisText) {
-      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
-    }
-
-    guessEl.innerHTML = thisHtml.join('')
-
-    if (playSound.checked) soundTick.play()
-  }
-
-  // Erase completed data
   if (target.closest('[data-erase]')) s.removeItem('remojibusCompleted')
-
-  // Submit puzzle
-  if (target.closest('[data-submit]')) {
-    let isAnswerCorrect = true
-    let leadingSpace
-    let trailingSpace
-
-    for (let [index, thisWord] of currentRequiredWords.entries()) {
-      leadingSpace = index > 0 ? ' ' : ''
-      trailingSpace = index < currentRequiredWords.length - 1 ? ' ' : ''
-
-      if (!currentValue.includes(`${leadingSpace}${thisWord}${trailingSpace}`)) {
-        isAnswerCorrect = false
-        break
-      }
-    }
-
-    // Puzzle is correct
-    if (isAnswerCorrect) {
-      d.querySelector('#game').hidden = true
-      d.querySelector('#win').hidden = false
-
-      if (playSound.checked) soundYay.play()
-
-      stopTimer()
-
-      let newArray = JSON.parse(s.getItem('remojibusCompleted'))
-      newArray.push(currentPuzzleId)
-      s.setItem('remojibusCompleted', JSON.stringify(newArray))
-    }
-
-    // Puzzle is wrong
-    if (!isAnswerCorrect) {
-      if (playSound.checked) soundDoh.play()
-      guessEl.classList.add('shake')
-      guessEl.addEventListener('animationend', () => guessEl.classList.remove('shake'))
-    }
-  }
+  if (target.closest('[data-submit]')) submitPuzzle(currentValue)
 })
 
 // Share the puzzle
@@ -165,6 +99,66 @@ d.addEventListener('change', ({ target }) => {
   if (target.closest('#game-audio')) s.setItem('remojibusAudio', target.checked)
   if (target.closest('#game-timer')) s.setItem('remojibusTimer', target.checked)
 })
+
+d.addEventListener('keyup', (el) => {
+  if (d.querySelector('#game').hidden === true) return
+
+  let currentValue = guessEl.dataset.words
+
+  if ("abcdefghijklmnopqrstuvwxyz".includes(el.key)) guessEl.dataset.words = `${currentValue}${el.key}`
+  if (el.key === ' ') guessEl.dataset.words = `${currentValue} `
+  if (el.key === 'Backspace') guessEl.dataset.words = currentValue.substring(0, guessEl.dataset.words.length - 1)
+
+  if ('abcdefghijklmnopqrstuvwxyz'.includes(el.key) || el.key === ' ' || el.key === 'Backspace') {
+    let thisText = guessEl.dataset.words.split(' ')
+    let thisHtml = []
+
+    for (let w of thisText) {
+      thisHtml.push(`<span class="w ${currentRequiredWords.includes(w) ? 'h' : ''}">${w}</span>`)
+    }
+
+    guessEl.innerHTML = thisHtml.join('')
+  }
+
+  if (el.key === 'Enter') submitPuzzle(currentValue)
+})
+
+function submitPuzzle(val) {
+  let isAnswerCorrect = true
+  let leadingSpace
+  let trailingSpace
+
+  for (let [index, thisWord] of currentRequiredWords.entries()) {
+    leadingSpace = index > 0 ? ' ' : ''
+    trailingSpace = index < currentRequiredWords.length - 1 ? ' ' : ''
+
+    if (!val.includes(`${leadingSpace}${thisWord}${trailingSpace}`)) {
+      isAnswerCorrect = false
+      break
+    }
+  }
+
+  // Puzzle is correct
+  if (isAnswerCorrect) {
+    d.querySelector('#game').hidden = true
+    d.querySelector('#win').hidden = false
+
+    if (playSound.checked) soundYay.play()
+
+    stopTimer()
+
+    let newArray = JSON.parse(s.getItem('remojibusCompleted'))
+    newArray.push(currentPuzzleId)
+    s.setItem('remojibusCompleted', JSON.stringify(newArray))
+  }
+
+  // Puzzle is wrong
+  if (!isAnswerCorrect) {
+    if (playSound.checked) soundDoh.play()
+    guessEl.classList.add('shake')
+    guessEl.addEventListener('animationend', () => guessEl.classList.remove('shake'))
+  }
+}
 
 function getPuzzle() {
   if (!anyPuzzles()) return
