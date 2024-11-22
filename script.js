@@ -18,7 +18,6 @@ d.addEventListener('DOMContentLoaded', () => {
   guessEl = d.querySelector('#guess')
   playSound = d.querySelector('#game-audio')
 
-  // Check local storage for settings
   if (s.getItem('remojibusPuzzles') == null || s.getItem('remojibusVersion') < v) getPuzzles()
   if (s.getItem('remojibusCompleted') == null) s.setItem('remojibusCompleted', JSON.stringify([]))
   if (s.getItem('remojibusHints') !== null) d.getElementById('hints').checked = JSON.parse(s.getItem('remojibusHints'))
@@ -133,6 +132,9 @@ function submitPuzzle(val) {
     let newArray = JSON.parse(s.getItem('remojibusCompleted'))
     newArray.push(currentPuzzleId)
     s.setItem('remojibusCompleted', JSON.stringify(newArray))
+
+    d.querySelector('[data-completed]').textContent = JSON.parse(s.getItem('remojibusCompleted')).length
+    d.querySelector('[data-total]').textContent = JSON.parse(s.getItem('remojibusPuzzles')).length
   }
 
   // Puzzle is wrong
@@ -167,7 +169,6 @@ function getPuzzle() {
   }
 
   d.querySelector('#puzzle').innerHTML = wordsMarkup.join('')
-  d.querySelector('[data-id]').textContent = `puzzle #${currentPuzzleId + 1}`
   d.querySelector('#hint').textContent = `Hint: ${currentPuzzle.hint}`
 
   currentAnswer = currentPuzzle.answer

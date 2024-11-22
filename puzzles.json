@@ -206,5 +206,113 @@
     "hint": "a throw of two ones",
     "answer": "snake eyes",
     "words": ["snake", "eyes"]
+  },
+  {
+    "puzzle": ["😡", "🫸", "🤖"],
+    "hint": "popular 1990s/2000s rap/metal band",
+    "answer": "rage against the machine",
+    "words": ["rage", "against", "the", "machine"]
+  },
+  {
+    "puzzle": ["🙆", "🔝"],
+    "hint": "exaggerated degree",
+    "answer": "over the top",
+    "words": ["over", "the", "top"]
+  },
+  {
+    "puzzle": ["🫖", "🕰️"],
+    "hint": "mid-afternoon in the UK",
+    "answer": "team time",
+    "words": ["tea", "time"]
+  },
+  {
+    "puzzle": ["🤬", "🗣️", "⚖️"],
+    "hint": "to not lie",
+    "answer": "swear to tell the truth",
+    "words": ["swear", "to", "tell", "the", "truth"]
+  },
+  {
+    "puzzle": ["🚀", "👨"],
+    "hint": "hit song by Elton John",
+    "answer": "rocket man",
+    "words": ["rocket", "man"]
+  },
+  {
+    "puzzle": ["🎸", "🦸🏻‍♂️"],
+    "hint": "popular video game",
+    "answer": "guitar hero",
+    "words": ["guitar", "hero"]
+  },
+  {
+    "puzzle": ["👶", "🚿"],
+    "hint": "celebrating a pregnancy",
+    "answer": "baby shower",
+    "words": ["baby", "shower"]
+  },
+  {
+    "puzzle": ["🔙", "➡️"],
+    "hint": "popular 1980s movie",
+    "answer": "back to the future",
+    "words": ["back", "to", "the", "future"]
+  },
+  {
+    "puzzle": ["💪🏻🪑", "🏈🔙"],
+    "hint": "person watching sports on television",
+    "answer": "armchair quarterback",
+    "words": ["armchair", "quarterback"]
+  },
+  {
+    "puzzle": ["👬", "◼️"],
+    "hint": "popular 1990s movie",
+    "answer": "men in black",
+    "words": ["men", "in", "black"]
+  },
+  {
+    "puzzle": ["💃", "🌃", "👋"],
+    "hint": "hit song by Dua Lipa",
+    "answer": "dance the night away",
+    "words": ["dance", "the", "night", "away"]
+  },
+  {
+    "puzzle": ["2️⃣", "🐝", "🤷‍♀️", "🚫", "2️⃣", "🐝"],
+    "hint": "popular line written by Shakespeare",
+    "answer": "to be or not to be",
+    "words": ["to", "be", "or", "not", "to", "be"]
+  },
+  {
+    "puzzle": ["🧬", "🟰", "📦", "🍫🍫"],
+    "hint": "famous line spoken by Forest Gump",
+    "answer": "life is like a box of chocolates",
+    "words": ["life", "is", "like", "box", "chocolates"]
+  },
+  {
+    "puzzle": ["👁️", "🔛", "🏆"],
+    "hint": "stay focused",
+    "answer": "eye on the prize",
+    "words": ["eye", "on", "the", "prize"]
+  },
+  {
+    "puzzle": ["👁️", "🐅"],
+    "hint": "popular 1980s song by Survivor",
+    "answer": "eye of the tiger",
+    "words": ["eye", "of", "the", "tiger"]
+  },
+  {
+    "puzzle": ["💨", "🇷🇺", "🫴", "❤️"],
+    "hint": "1960s James Bond film",
+    "answer": "from russia with love",
+    "words": ["from", "russia", "with", "love"]
+  },
+  {
+    "puzzle": ["🟨", "🚢"],
+    "hint": "popular song by The Beatles",
+    "answer": "yellow submarine",
+    "words": ["yellow", "submarine"]
+  },
+  {
+    "puzzle": ["🏎️", "✚", "😡"],
+    "hint": "media franchise featuring Vin Diesel",
+    "answer": "fast and furious",
+    "words": ["fast", "and", "furious"]
   }
 ]
