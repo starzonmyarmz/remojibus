@@ -71,20 +71,24 @@ p {
   margin-block: var(--space-lg);
 }
 
+a, button {
+  touch-action: manipulation;
+}
+
 a {
   color: var(--prussian-blue);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
+button {
+  font: inherit;
+}
+
 img,
 svg {
   display: block;
   max-width: 100%;
-}
-
-button {
-  font: inherit;
 }
 
 fieldset {

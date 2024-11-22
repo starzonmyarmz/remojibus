@@ -314,5 +314,23 @@
     "hint": "media franchise featuring Vin Diesel",
     "answer": "fast and furious",
     "words": ["fast", "and", "furious"]
+  },
+  {
+    "puzzle": ["⚽️", "🕯️"],
+    "hint": "it’s a whole thing… a concern",
+    "answer": "ball of wax",
+    "words": ["ball", "of", "wax"]
+  },
+  {
+    "puzzle": ["🥳", "🇺🇸"],
+    "hint": "popular song by Miley Cyrus",
+    "answer": "party in the usa",
+    "words": ["party", "in", "the", "usa"]
+  },
+  {
+    "puzzle": ["🤴", "💍💍"],
+    "hint": "popular movie franchise",
+    "answer": "lord of the rings",
+    "words": ["lord", "of", "the", "rings"]
   }
 ]
