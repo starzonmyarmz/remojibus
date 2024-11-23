@@ -1,6 +1,6 @@
 const s = localStorage
 const d = document
-const v = 1
+const v = 2
 
 let soundTick
 let soundDoh

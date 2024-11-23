@@ -18,7 +18,7 @@
     "words": ["silence", "of", "the", "lambs"]
   },
   {
-    "puzzle": ["🌧️", "🐈🐈‍⬛", "🐕🐩"],
+    "puzzle": ["🌧️", "🐈🐈‍⬛", "✚", "🐕🐩"],
     "hint": "heavy precipitation",
     "answer": "raining cats and dogs",
     "words": ["raining", "cats", "dogs"]
@@ -172,7 +172,7 @@
     "words": ["purple", "rain"]
   },
   {
-    "puzzle": ["🔫🔫", "🌹🌹"],
+    "puzzle": ["🔫🔫", "✚", "🌹🌹"],
     "hint": "Rock band of the 1980s",
     "answer": "guns and roses",
     "words": ["guns", "and", "roses"]
@@ -329,8 +329,235 @@
   },
   {
     "puzzle": ["🤴", "💍💍"],
-    "hint": "popular movie franchise",
+    "hint": "popular fantasy movie franchise",
     "answer": "lord of the rings",
     "words": ["lord", "of", "the", "rings"]
+  },
+  {
+    "puzzle": ["👽👽"],
+    "hint": "popular sci fi movie franchise",
+    "answer": "aliens"
+  },
+  {
+    "puzzle": ["🐓", "💃"],
+    "hint": "song often played at weddings",
+    "answer": "chicken dance",
+    "words": ["chicken", "dance"]
+  },
+  {
+    "puzzle": ["🌹", "👓"],
+    "hint": "failing to notice the negative",
+    "answer": "rose colored glasses",
+    "words": ["rose", "colored", "glasses"]
+  },
+  {
+    "puzzle": ["🌮", "🥗"],
+    "hint": "healthy Tex-Mex meal",
+    "answer": "taco salad",
+    "words": ["taco", "salad"]
+  },
+  {
+    "puzzle": ["🍪", "✂️"],
+    "hint": "device for cutting dough",
+    "answer": "cookie cutter",
+    "words": ["cookie", "cutter"]
+  },
+  {
+    "puzzle": ["🤔", "🔫", "🐈"],
+    "hint": "unnecessary investigation may be dangerous",
+    "answer": "curiosity killed the cat",
+    "words": ["curiosity", "killed", "cat"]
+  },
+  {
+    "puzzle": ["✂️", "✚", "🏃‍♂️"],
+    "hint": "departure from an awkward situation",
+    "answer": "cut and run",
+    "words": ["cut", "and", "run"]
+  },
+  {
+    "puzzle": ["🫦", "🖐️", "🧑‍🍼", "🫵"],
+    "hint": "deliberately offend a benefactor",
+    "answer": "bite the hand that feeds",
+    "words": ["bite", "hand", "feeds", "you"]
+  },
+  {
+    "puzzle": ["👇", "➡️", "🗑️🗑️"],
+    "hint": "feeling miserable",
+    "answer": "down in the dumps",
+    "words": ["down", "dumps"]
+  },
+  {
+    "puzzle": ["🍸", "🐟"],
+    "hint": "consume a lot of alcoholic",
+    "answer": "drink like a fish",
+    "words": ["drink", "like", "a", "fish"]
+  },
+  {
+    "puzzle": ["🚶‍➡️", "🎶"],
+    "hint": "accept unpleasant consequences",
+    "answer": "face the music",
+    "words": ["face", "the", "music"]
+  },
+  {
+    "puzzle": ["🌎", "🤏", "🎻"],
+    "hint": "no sympathy",
+    "answer": "worlds smallest violin",
+    "words": ["worlds", "smallest", "violin"]
+  },
+  {
+    "puzzle": ["💨", "😴"],
+    "hint": "sleep tight",
+    "answer": "fast asleep",
+    "words": ["fast", "asleep"]
+  },
+  {
+    "puzzle": ["🙂", "⬆️", "👠👠"],
+    "hint": "madly in love",
+    "answer": "head over heels",
+    "words": ["head", "over", "heels"]
+  },
+  {
+    "puzzle": ["👂", "🙅‍♂️", "😈"],
+    "hint": "demonstrate good speech and actions",
+    "answer": "hear no evil",
+    "words": ["hear", "no", "evil"]
+  },
+  {
+    "puzzle": ["🤜", "💅", "🔛", "🙂"],
+    "hint": "something is exactly right",
+    "answer": "hit the nail on the head",
+    "words": ["hit", "nail", "head"]
+  },
+  {
+    "puzzle": ["🙅‍♂️", "🔍"],
+    "hint": "don’t know",
+    "answer": "no clue",
+    "words": ["no", "clue"]
+  },
+  {
+    "puzzle": ["🧠🧠", "👁️"],
+    "hint": "having a clear picture",
+    "answer": "minds eye",
+    "words": ["minds", "eye"]
+  },
+  {
+    "puzzle": ["❤️", "🟰", "🧑‍🦯"],
+    "hint": "doesn’t see imperfections",
+    "answer": "love is blind",
+    "words": ["love", "is", "blind"]
+  },
+  {
+    "puzzle": ["🙅‍♂️", "🎲🎲"],
+    "hint": "having no success",
+    "answer": "no dice",
+    "words": ["no", "dice"]
+  },
+  {
+    "puzzle": ["🙅‍♂️", "😴", "😈"],
+    "hint": "evil-doers will face punishment",
+    "answer": "no rest for the wicked",
+    "words": ["no", "rest", "wicked"]
+  },
+  {
+    "puzzle": ["☁️", "🕘"],
+    "hint": "extremely happy",
+    "answer": "cloud nine",
+    "words": ["cloud", "nine"]
+  },
+  {
+    "puzzle": ["🦶", "➡️", "🪦"],
+    "hint": "close to dying",
+    "answer": "one foot in the grave",
+    "words": ["one", "foot", "in", "grave"]
+  },
+  {
+    "puzzle": ["☝️", "🤜", "🤔"],
+    "hint": "successful for a brief time",
+    "answer": "one hit wonder",
+    "words": ["one", "hit", "wonder"]
+  },
+  {
+    "puzzle": ["⬆️", "🌙"],
+    "hint": "very pleased",
+    "answer": "over the moon",
+    "words": ["over", "the", "moon"]
+  },
+  {
+    "puzzle": ["🦪🦪", "🔜", "🐖"],
+    "hint": "person not appreciating effort",
+    "answer": "pearls before swine",
+    "words": ["pearls", "before", "swine"]
+  },
+  {
+    "puzzle": ["🥧", "➡️", "🌌"],
+    "hint": "something good that seems unlikely",
+    "answer": "pie in the sky",
+    "words": ["pie", "in", "sky"]
+  },
+  {
+    "puzzle": ["🔵", "🌌", "🤔"],
+    "hint": "out of the box thinking",
+    "answer": "blue sky thinking",
+    "words": ["blue", "sky", "thinking"]
+  },
+  {
+    "puzzle": ["2️⃣", "🎻"],
+    "hint": "less important",
+    "answer": "second fiddle",
+    "words": ["second", "fiddle"]
+  },
+  {
+    "puzzle": ["➡️", "🌧️"],
+    "hint": "in excellent condition",
+    "answer": "right as rain",
+    "words": ["rain", "as", "rain"]
+  },
+  {
+    "puzzle": ["🤮", "🐶"],
+    "hint": "a cruel person",
+    "answer": "sick puppy",
+    "words": ["sick", "puppy"]
+  },
+  {
+    "puzzle": ["🌫️", "✚", "🪞🪞"],
+    "hint": "embelish the truth",
+    "answer": "smoke and mirrors",
+    "words": ["smoke", "mirrors"]
+  },
+  {
+    "puzzle": ["🐝🐝", "🦵🦵"],
+    "hint": "much-liked thing",
+    "answer": "bees knees",
+    "words": ["bees", "knees"]
+  },
+  {
+    "puzzle": ["⚪️", "🐘"],
+    "hint": "of little or no value",
+    "answer": "white elephant",
+    "words": ["white", "elephant"]
+  },
+  {
+    "puzzle": ["🖊️", "🟰", "💪🏻", "🗡️"],
+    "hint": "more effective than violence",
+    "answer": "pen is mightier than the sword",
+    "words": ["pen", "mightier", "sword"]
+  },
+  {
+    "puzzle": ["🧂", "↩️", "🌎"],
+    "hint": "very good, honest",
+    "answer": "salt of the earth",
+    "words": ["salt", "of", "the", "earth"]
+  },
+  {
+    "puzzle": ["🙅‍♀️🙅‍♀️🙅‍♀️"],
+    "hint": "number of chances you get",
+    "answer": "three strikes",
+    "words": ["three", "strikes", "sword"]
+  },
+  {
+    "puzzle": ["👽", "📞", "🏠"],
+    "hint": "line from popular 1980s movie",
+    "answer": "et phone home",
+    "words": ["et", "phone", "home"]
   }
 ]

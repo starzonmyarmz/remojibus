@@ -322,8 +322,9 @@ button {
   background: oklch(var(--prussian-blue));
   border-radius: var(--space-md);
   color: #fff;
+  margin: 0 auto;
   min-height: 48px;
-  width: min(50vw, 300px);
+  width: min(40vw, 300px);
   padding: var(--space-md);
 }
 
