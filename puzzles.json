@@ -559,5 +559,47 @@
     "hint": "line from popular 1980s movie",
     "answer": "et phone home",
     "words": ["et", "phone", "home"]
+  },
+  {
+    "puzzle": ["🐫", "☀️"],
+    "hint": "Wednesday",
+    "answer": "hump day",
+    "words": ["hump", "day"]
+  },
+  {
+    "puzzle": ["😱", "🪩"],
+    "hint": "rock band of the 2000s",
+    "answer": "panic at the disco",
+    "words": ["panic", "at", "the", "disco"]
+  },
+  {
+    "puzzle": ["💥", "🫵", "🦌"],
+    "hint": "value for one’s money",
+    "answer": "bang for your buck",
+    "words": ["bang", "for", "your", "buck"]
+  },
+  {
+    "puzzle": ["🔒", "💰📈", "🛢️"],
+    "hint": "everything",
+    "answer": "lock stock and barrel",
+    "words": ["lock", "stock", "barrel"]
+  },
+  {
+    "puzzle": ["🇬🇷", "➡️", "🫵"],
+    "hint": "difficult to understand",
+    "answer": "greek to me",
+    "words": ["greek", "to", "me"]
+  },
+  {
+    "puzzle": ["👤👤", "🆙"],
+    "hint": "warning",
+    "answer": "heads up",
+    "words": ["heads", "up"]
+  },
+  {
+    "puzzle": ["🧚📖", "🔚"],
+    "hint": "perfect resolution",
+    "answer": "fairytale ending",
+    "words": ["fairytale", "ending"]
   }
 ]

@@ -1,6 +1,6 @@
 const s = localStorage
 const d = document
-const v = 2
+const v = 1
 
 let soundTick
 let soundDoh
@@ -59,8 +59,13 @@ d.addEventListener('click', ({ target }) => {
   if (target.closest('[data-space]')) guessEl.dataset.words = `${currentValue} `
   if (target.closest('[data-delete]')) guessEl.dataset.words = currentValue.substring(0, guessEl.dataset.words.length - 1)
   if (target.closest('[data-letter], [data-space], [data-delete]')) updateGuess()
-  if (target.closest('[data-erase]')) s.removeItem('remojibusCompleted')
   if (target.closest('[data-submit]')) submitPuzzle(currentValue)
+
+  if (target.closest('[data-erase]')) {
+    s.removeItem('remojibusCompleted')
+    s.removeItem('remojibusPuzzles')
+    location.reload()
+  }
 })
 
 // Share the puzzle
